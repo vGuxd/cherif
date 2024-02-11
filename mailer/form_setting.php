@@ -1,44 +1,28 @@
 <?php
-	/*Form settings*/
-	$subj = "New message from the site 'You Site Name'"; //letter subject
-	$to = 'vguxd14@gmail.com'; // Enter Your E-mail
-	$from = 'admin@you-site-name.com'; // Admin e-mail
-	$fromName = 'Your Company Name'; // Your company name
-	$charset = 'UTF-8';
-?>
-
-<?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get form data
-    $name = $_POST["name"];
-    $tel = $_POST["tel"];
-    $email = $_POST["email"];
-    $subject = $_POST["subject"];
-    $message = $_POST["message"];
+    // Retrieve form data
+    $name = $_POST['name'];
+    $tel = $_POST['tel'];
+    $email = $_POST['email'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
 
-    // Email address to receive form submissions
-    $to = "vguxd14@gmail.com";
+    // Construct the email content
+    $formcontent = "From: $name\nPhone: $tel\nEmail: $email\nSubject: $subject\nMessage: $message";
 
-    // Email subject
-    $email_subject = "New Contact Form Submission: $subject";
+    // Set recipient email address
+    $recipient = "vguxd14@gmail.com"; // Replace with your actual email address
 
-    // Email headers
-    $headers = "From: $email\r\n";
-    $headers .= "Reply-To: $email\r\n";
-    $headers .= "X-Mailer: PHP/" . phpversion();
+    // Set email subject
+    $email_subject = "Contact Form Submission: $subject";
 
-    // Compose email message
-    $email_message = "Name: $name\n";
-    $email_message .= "Phone: $tel\n";
-    $email_message .= "Email: $email\n";
-    $email_message .= "Subject: $subject\n\n";
-    $email_message .= "Message:\n$message";
+    // Set the "From" header
+    $mailheader = "From: $email\n";
 
-    // Send email
-    mail($to, $email_subject, $email_message, $headers);
+    // Send the email
+    mail($recipient, $email_subject, $formcontent, $mailheader) or die("Error sending message.");
 
-    // You can add additional actions here, such as redirecting to a thank you page
-    // header("Location: thank-you.html");
-    // exit();
+    // Display a thank you message to the user
+    echo "Thanks, your message has been sent successfully. We will contact you shortly!";
 }
 ?>
