@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -366,8 +367,9 @@
 						<div class="title">Contact Me</div>
 					</div>
 					<div class="contact-form">
-						<form id="cform" method="post">
+						<form id="cform" action="https://api.web3forms.com/submit" method="POST">
 							<div class="row">
+								<input type="hidden" name="access_key" value="6bae5e8a-6fc1-49ff-9f5a-f9b316665c8e">
 								<div class="col col-m-12 col-t-6 col-d-6">
 									<div class="value">
 										<input type="text" name="name" placeholder="Name *" />
@@ -394,7 +396,7 @@
 									</div>
 								</div>
 								<div class="col col-m-12 col-t-12 col-d-12">
-									<a href="index.html" class="btn" onclick="document.getElementById('#cform').submit(); return false;">Send Message</a>
+									<button type="submit">submit</button>
 								</div>
 							</div>
 						</form>
