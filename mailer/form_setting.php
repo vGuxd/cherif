@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $formcontent = "From: $name\nPhone: $tel\nEmail: $email\nSubject: $subject\nMessage: $message";
 
     // Set recipient email address
-    $recipient = "vguxd14@gmail.com"; // Replace with your actual email address
+    $recipient = "vguxd14@gmail.com"; // My Email
 
     // Set email subject
     $email_subject = "Contact Form Submission: $subject";
@@ -25,4 +25,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Display a thank you message to the user
     echo "Thanks, your message has been sent successfully. We will contact you shortly!";
 }
-?>
+?> 

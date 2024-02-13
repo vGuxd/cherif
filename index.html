@@ -32,8 +32,9 @@
 	
 	<!-- Favicon -->
 	<link rel="shortcut icon" href="images/favicons/favicon.ico">
-	
+
 </head>
+
 
 <body>
 	
@@ -367,9 +368,9 @@
 						<div class="title">Contact Me</div>
 					</div>
 					<div class="contact-form">
-						<form id="cform" action="https://api.web3forms.com/submit" method="POST">
+						<form id="cform" method="POST" action="mailer/form_setting.php">
 							<div class="row">
-								<input type="hidden" name="access_key" value="6bae5e8a-6fc1-49ff-9f5a-f9b316665c8e">
+								
 								<div class="col col-m-12 col-t-6 col-d-6">
 									<div class="value">
 										<input type="text" name="name" placeholder="Name *" />
@@ -396,7 +397,7 @@
 									</div>
 								</div>
 								<div class="col col-m-12 col-t-12 col-d-12">
-									<button type="submit">submit</button>
+									<a href="#" class="btn" onclick="document.getElementById('cform').submit(); return false;">Send Message</a>
 								</div>
 							</div>
 						</form>
